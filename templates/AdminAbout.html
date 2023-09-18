@@ -1,0 +1,39 @@
+{% extends 'AdminPanelLayout.html' %}
+
+
+{% block content %}
+    <form method="POST">
+    <h1 style="text-align: center">ABOUT EDİT SAYFASI</h1>
+    <div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Hakkında Başlığı</label>
+  <input type="text" name="baslik1" class="form-control" id="exampleFormControlInput1" placeholder="" value="{{ hakkımda_verisi[0] }}">
+</div>
+    <br>
+    <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Alt Baslik</label>
+  <textarea class="form-control" name="altbaslik" id="exampleFormControlTextarea1" rows="3">{{ hakkımda_verisi[1] }}</textarea>
+</div>
+    <br>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Açıklama</label>
+  <textarea class="form-control" name="aciklama" id="exampleFormControlTextarea1" rows="3">{{ hakkımda_verisi[2] }}</textarea>
+</div>
+<br>
+    <br>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">BAŞLIK 2</label>
+  <input type="text" class="form-control" name="baslik2" id="exampleFormControlInput1" placeholder="" value="{{ hakkımda_verisi[3] }}">
+</div>
+    <br>
+    <div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Misyon</label>
+  <textarea class="form-control" name="misyon" id="exampleFormControlTextarea1" rows="3">{{ hakkımda_verisi[4] }}</textarea>
+</div>
+      <br>
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Vizyon</label>
+  <textarea class="form-control" name="vizyon" id="exampleFormControlTextarea1" rows="3">{{ hakkımda_verisi[5] }}</textarea>
+</div>
+    <button type="submit" class="btn btn-warning">GÜNCELLE</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'AdminPanelLayout.html' %}
+
+{% block content %}
+    <h1 style="text-align: center;margin-right: 5%">ABONELER</h1>
+    <div class="container" style="justify-content: center;margin-left: 10%">
+
+        <br>
+<table class="table table-bordered" style="width: 80%">
+  <thead>
+    <tr style="text-align: center">
+      <th scope="col">ID</th>
+      <th scope="col">MAİL</th>
+      <th scope="col">ABONE OLMA TARİHİ</th>
+    </tr>
+  </thead>
+  <tbody>
+
+  {% for i in aboneler %}
+      <form  method="POST">
+    <tr style="text-align: center">
+      <th scope="row">{{ i[0] }}</th>
+      <td>{{ i[1] }}</td>
+      <td>{{ i[2] }}</td>
+        <td>
+            <form action="/Adminsubcribers" method="POST">
+             <input type="hidden" name="abone_id" value="{{ i[0] }}">
+                <button type="submit" class="btn btn-danger">SİL</button>
+            </form>
+        </td>
+    </tr>
+      </form>
+  {% endfor %}
+
+  </tbody>
+</table>
+    </div>
+
+
+
+
+
+{% endblock %}
